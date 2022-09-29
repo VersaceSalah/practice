@@ -1,16 +1,22 @@
-# This is a sample Python script.
+from datetime import datetime, timedelta
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+while True:
+    try:
+        year = int(input('Введите год рождения:\t'))
+        month = int(input('Введите месяц рождения:\t'))
+        day = int(input('Введите день рождения:\t'))
+        birthday = datetime(year, month, day)
+        print('\n')
+        break
+    except ValueError:
+        print('\nДанные некоректные\n')
+    except TypeError:
+        print('\nДанные некоректные\n')
 
+days = timedelta(hours=24 * 10 ** 4, minutes=0, seconds=0)
+minutes = timedelta(hours=0, minutes=10 ** 6, seconds=0)
+seconds = timedelta(hours=0, minutes=0, seconds=10 ** 9)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(f'Через {10 ** 4} дней пользователю исполится {birthday + days}')
+print(f'Через {10 ** 6} минут пользователю исполнится {birthday + minutes}')
+print(f'Через {10 ** 9} секунд пользователю исполнится {birthday + seconds}')
